@@ -1,0 +1,92 @@
+/* Global Reset and Base Styling */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Courier New', monospace;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  transition: background-color 0.3s, color 0.3s;
+  background-color: black;
+  color: white;
+}
+
+.title {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.clock {
+  font-size: 5rem;
+  color: cyan;
+  margin-bottom: 10px;
+}
+
+.ampm {
+  font-size: 4rem;
+  color: cyan;
+  margin-bottom: 20px;
+}
+
+.date {
+  font-size: 1.5rem;
+  color: gold;
+  margin-bottom: 40px;
+}
+
+.toggle-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1rem;
+}
+
+.toggle {
+  width: 50px;
+  height: 25px;
+  border-radius: 25px;
+  background-color: cyan;
+  position: relative;
+  cursor: pointer;
+}
+
+.toggle::before {
+  content: "";
+  width: 21px;
+  height: 21px;
+  background-color: black;
+  border-radius: 50%;
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  transition: transform 0.3s;
+}
+
+.light-mode {
+  background-color: white;
+  color: #111;
+}
+
+.light-mode .clock,
+.light-mode .ampm {
+  color:blue;
+}
+
+.light-mode .date {
+  color: orange;
+}
+
+.light-mode .toggle {
+  background-color: blue;
+}
+
+.light-mode .toggle::before {
+  transform: translateX(25px);
+  background-color: white;
+}
